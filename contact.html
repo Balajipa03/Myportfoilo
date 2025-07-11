@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Me | DevExplorer</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"
+  />
+  <!-- Custom CSS -->
+  <link href="assets/css/style.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --primary: #6e44ff;
+      --accent: #6e44ff;
+      --bg-darker: #121212;
+    }
+
+    .navbar {
+      background-color: var(--bg-darker);
+      padding: 0.8rem 1rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-card {
+      transition: all 0.3s ease;
+      border: none;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-control:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 0.25rem rgba(110, 68, 255, 0.25);
+    }
+
+    .contact-icon {
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+    }
+
+    .btn-outline-accent {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .btn-outline-accent:hover {
+      background-color: var(--accent);
+      color: #fff;
+      box-shadow: 0 0 10px rgba(110, 68, 255, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html" style="color: var(--primary);">DevExplorer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="skills.html">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.html">Contact</a>
+          </li>
+          <li class="nav-item ms-2">
+            <button class="btn btn-sm btn-outline-primary" id="darkModeToggle">
+              <i class="bi bi-moon-fill"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="contact-header text-center py-5 mt-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3" style="color: var(--primary);">Get In Touch</h1>
+      <p class="lead">Have a project in mind or want to connect? Drop me a message!</p>
+    </div>
+  </section>
+
+  <!-- Contact Options -->
+  <section class="py-5 bg-darker">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card contact-card h-100 text-center p-4">
+            <div class="contact-icon bg-primary bg-opacity-10 text-primary">
+              <i class="bi bi-envelope-fill fs-3"></i>
+            </div>
+            <h3 class="h4 mb-3">Email Me</h3>
+            <p class="mb-3">For project inquiries and collaborations</p>
+            <a href="mailto:balajiparla26@gmail.com" class="btn btn-outline-primary">balajiparla26@gmail.com</a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card contact-card h-100 text-center p-4">
+            <div class="contact-icon bg-accent bg-opacity-10 text-accent">
+              <i class="bi bi-linkedin fs-3"></i>
+            </div>
+            <h3 class="h4 mb-3">LinkedIn</h3>
+            <p class="mb-3">Let's connect professionally</p>
+            <a href="https://linkedin.com/in/balajiparla" target="_blank" class="btn btn-outline-accent">
+              Connect on LinkedIn
+            </a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card contact-card h-100 text-center p-4">
+            <div class="contact-icon bg-success bg-opacity-10 text-success">
+              <i class="bi bi-github fs-3"></i>
+            </div>
+            <h3 class="h4 mb-3">GitHub</h3>
+            <p class="mb-3">Check out my open-source projects</p>
+            <a href="https://github.com/Balajipa03" target="_blank" class="btn btn-outline-success">
+              View GitHub Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section class="py-5 bg-dark">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card contact-card border-primary p-4">
+            <h2 class="text-center mb-4" style="color: var(--primary);">
+              <i class="bi bi-send-fill me-2"></i>Send a Message
+            </h2>
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="firstName" class="form-label">First Name</label>
+                  <input type="text" class="form-control" id="firstName" required />
+                  <div class="invalid-feedback">Please enter your first name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label for="lastName" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="lastName" required />
+                  <div class="invalid-feedback">Please enter your last name.</div>
+                </div>
+                <div class="col-12">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" required />
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-12">
+                  <label for="subject" class="form-label">Subject</label>
+                  <select class="form-select" id="subject" required>
+                    <option value="" selected disabled>Choose...</option>
+                    <option>Project Inquiry</option>
+                    <option>Job Opportunity</option>
+                    <option>Collaboration</option>
+                    <option>Other</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a subject.</div>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Message</label>
+                  <textarea class="form-control" id="message" rows="5" required></textarea>
+                  <div class="invalid-feedback">Please enter your message.</div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="agree" required />
+                    <label class="form-check-label" for="agree">I agree to the terms and conditions</label>
+                    <div class="invalid-feedback">You must agree before submitting.</div>
+                  </div>
+                </div>
+                <div class="col-12 text-center">
+                  <button class="btn btn-primary px-4 py-2" type="submit">
+                    <i class="bi bi-send-fill me-2"></i>Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Location Map -->
+  <section class="py-5 bg-darker">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: var(--secondary);">
+        <i class="bi bi-geo-alt-fill me-2"></i>My Location
+      </h2>
+      <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497698.6600754044!2d77.35073221953124!3d12.954517012580826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-darker text-center">
+    <div class="container">
+      <div class="social-links mb-3">
+        <a href="#" class="text-white mx-2"><i class="bi bi-github fs-4"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-linkedin fs-4"></i></a>
+        <a href="#" class="text-white mx-2"><i class="bi bi-twitter fs-4"></i></a>
+      </div>
+      <p class="mb-0">&copy; 2025 Balaji PA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    (function () {
+      "use strict";
+      const forms = document.querySelectorAll(".needs-validation");
+      Array.prototype.slice.call(forms).forEach(function (form) {
+        form.addEventListener(
+          "submit",
+          function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault();
+              event.stopPropagation();
+            }
+            form.classList.add("was-validated");
+          },
+          false
+        );
+      });
+    })();
+  </script>
+</body>
+</html>

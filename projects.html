@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Projects | DevExplorer</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css"/>
+  <!-- Custom CSS -->
+  <link href="assets/style.css" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary: #6e44ff;
+      --secondary: #ff914d;
+      --accent: #ff4081;
+      --bg-darker: #121212;
+    }
+
+    body {
+      background-color: #f8f9fa;
+    }
+
+    .navbar {
+      background-color: #000 !important;
+    }
+
+    .bg-darker {
+      background-color: #1c1c1c;
+      color: white;
+    }
+
+    .project-card {
+      background-color: white;
+      border-radius: 0.75rem;
+      overflow: hidden;
+    }
+
+    .project-card .badge {
+      font-size: 0.8rem;
+    }
+
+    .project-features li {
+      list-style: none;
+      margin-bottom: 0.5rem;
+    }
+
+    .object-fit-cover {
+      object-fit: cover;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html" style="color: var(--primary);">DevExplorer</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item ms-2">
+            <button class="btn btn-sm btn-outline-primary" id="darkModeToggle">
+              <i class="bi bi-moon-fill"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Header -->
+  <header class="projects-header text-center py-5 mt-5">
+    <div class="container">
+      <h1 class="display-4 fw-bold mb-3" style="color: var(--secondary);">My Projects</h1>
+      <p class="lead">From web development to AI systems</p>
+      <div class="d-flex justify-content-center gap-3 mt-4">
+        <a href="#web" class="btn btn-outline-primary">Web Projects</a>
+        <a href="#ai" class="btn btn-outline-primary">AI Projects</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Web Projects Section -->
+  <section id="web" class="py-5 bg-darker">
+    <div class="container">
+      <h2 class="text-center mb-5" style="color: var(--primary);">
+        <i class="bi bi-code-slash me-2"></i>Web Development
+      </h2>
+
+      <!-- ICSEIC Conference Website -->
+      <div class="card project-card mb-5 border-primary">
+        <div class="row g-0">
+          <div class="col-md-6">
+            <div id="icseicCarousel" class="carousel slide h-100 overflow-hidden rounded-start" data-bs-ride="carousel">
+              <div class="carousel-inner h-100">
+                <div class="carousel-item active">
+                  <img src="image.png" class="d-block w-100 img-fluid object-fit-cover" alt="ICSEIC Homepage" />
+                </div>
+                <div class="carousel-item">
+                  <img src="image2.png" class="d-block w-100 img-fluid object-fit-cover" alt="ICSEIC Form" />
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#icseicCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#icseicCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </button>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card-body p-4">
+              <div class="d-flex justify-content-between align-items-start">
+                <h3 class="card-title mb-3">ICSEIC 2025 Conference Website</h3>
+                <span class="badge bg-primary">Team Project</span>
+              </div>
+              <div class="tech-tags mb-3">
+                <span class="badge bg-primary me-2">HTML5</span>
+                <span class="badge bg-primary me-2">CSS3</span>
+                <span class="badge bg-primary me-2">JavaScript</span>
+                <span class="badge bg-primary">Google Forms</span>
+              </div>
+              <p class="card-text mb-4">
+                Developed a responsive conference portal with Google Forms integration for paper submissions. Implemented mobile-first design and performance optimization techniques including image compression and lazy loading.
+              </p>
+              <ul class="project-features mb-4">
+                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Responsive design for all devices</li>
+                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Google Forms integration</li>
+                <li><i class="bi bi-check-circle-fill text-primary me-2"></i>Optimized performance (90+ Lighthouse score)</li>
+              </ul>
+              <div class="project-links">
+                <a href="http://icseic2025.me/" class="btn btn-primary me-2">
+                  <i class="bi bi-eye-fill me-1"></i> Live Demo
+                </a>
+                <a href="https://github.com/Balajipa03/Conference" class="btn btn-outline-primary">
+                  <i class="bi bi-github me-1"></i> View Code
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Robomanthan Website -->
+      <div class="card project-card mb-5 border-primary">
+        <div class="row g-0">
+          <div class="col-md-6 order-md-2">
+            <img src="image3.png" class="img-fluid h-100 w-100 object-fit-cover rounded-end" alt="Robomanthan Website">
+          </div>
+          <div class="col-md-6 order-md-1">
+            <div class="card-body p-4">
+              <h3 class="card-title mb-3">Robomanthan Company Website</h3>
+              <div class="tech-tags mb-3">
+                <span class="badge bg-primary me-2">WordPress</span>
+                <span class="badge bg-primary me-2">Elementor</span>
+                <span class="badge bg-primary">CSS</span>
+              </div>
+              <p class="card-text mb-4">
+                Developed during my internship at Robomanthan Pvt Ltd, this website showcases the company's robotics solutions with a clean, professional design. Focused on creating responsive layouts and optimizing user experience.
+              </p>
+              <div class="project-highlights mb-4">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-people-fill text-primary me-3 fs-5"></i>
+                  <span>Collaborated with 3-member team</span>
+                </div>
+                <div class="d-flex align-items-center">
+                  <i class="bi bi-calendar-check-fill text-primary me-3 fs-5"></i>
+                  <span>Jan 2025 - Mar 2025</span>
+                </div>
+              </div>
+              <!-- <a href="#" class="btn btn-primary">
+                <i class="bi bi-link-45deg me-1"></i> Visit Website
+              </a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-5 bg-primary text-center text-white">
+    <div class="container">
+      <h2 class="display-5 mb-4">Have a project in mind?</h2>
+      <p class="lead mb-4">Let's discuss how I can help bring your ideas to life</p>
+      <a href="contact.html" class="btn btn-light btn-lg px-4">
+        <i class="bi bi-chat-left-text me-2"></i> Contact Me
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-darker text-center">
+    <div class="container">
+      <div class="social-links mb-3">
+        <a href="https://github.com/Balajipa03" class="text-white mx-2"><i class="bi bi-github fs-4"></i></a>
+        <a href="https://linkedin.com/in/balajiparla" class="text-white mx-2"><i class="bi bi-linkedin fs-4"></i></a>
+        <!-- <a href="#" class="text-white mx-2"><i class="bi bi-twitter fs-4"></i></a> -->
+      </div>
+      <p class="mb-0">&copy; 2025 Balaji PA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

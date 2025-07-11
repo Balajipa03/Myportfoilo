@@ -1,0 +1,10 @@
+.project-card .carousel-inner img {
+  max-height: 300px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .project-card .carousel-inner img {
+    max-height: 100%;
+  }
+}
