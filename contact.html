@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Me | DevExplorer</title>
 
   <!-- Bootstrap 5 CSS -->
@@ -23,11 +23,6 @@
       --primary: #6e44ff;
       --accent: #6e44ff;
       --bg-darker: #121212;
-      --secondary: #b892ff;
-    }
-
-    body {
-      overflow-x: hidden;
     }
 
     .navbar {
@@ -73,55 +68,13 @@
       box-shadow: 0 0 10px rgba(110, 68, 255, 0.5);
     }
 
-    /* Mobile-specific adjustments */
+    /* Only essential mobile adjustments */
     @media (max-width: 768px) {
       .contact-header {
-        padding-top: 2rem !important;
-        padding-bottom: 2rem !important;
+        padding-top: 3rem;
       }
-      
-      .display-4 {
-        font-size: 2.5rem !important;
-      }
-      
-      .lead {
-        font-size: 1.1rem;
-      }
-      
-      .contact-card {
-        margin-bottom: 1.5rem;
-      }
-      
       .navbar-brand {
         font-size: 1.2rem;
-      }
-      
-      .btn {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .display-4 {
-        font-size: 2rem !important;
-      }
-      
-      .lead {
-        font-size: 1rem;
-      }
-      
-      .contact-icon {
-        width: 50px;
-        height: 50px;
-      }
-      
-      h3.h4 {
-        font-size: 1.2rem;
-      }
-      
-      .form-label {
-        font-size: 0.9rem;
       }
     }
   </style>
@@ -131,7 +84,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html" style="color: var(--primary);">DevExplorer</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -275,7 +228,7 @@
   <!-- Location Map -->
   <section class="py-5 bg-darker">
     <div class="container">
-      <h2 class="text-center mb-5" style="color: var(--secondary);">
+      <h2 class="text-center mb-5" style="color: var(--primary);">
         <i class="bi bi-geo-alt-fill me-2"></i>My Location
       </h2>
       <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
