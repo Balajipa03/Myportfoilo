@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Contact Me | DevExplorer</title>
 
   <!-- Bootstrap 5 CSS -->
@@ -23,6 +23,11 @@
       --primary: #6e44ff;
       --accent: #6e44ff;
       --bg-darker: #121212;
+      --secondary: #b892ff;
+    }
+
+    body {
+      overflow-x: hidden;
     }
 
     .navbar {
@@ -67,6 +72,58 @@
       color: #fff;
       box-shadow: 0 0 10px rgba(110, 68, 255, 0.5);
     }
+
+    /* Mobile-specific adjustments */
+    @media (max-width: 768px) {
+      .contact-header {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+      }
+      
+      .display-4 {
+        font-size: 2.5rem !important;
+      }
+      
+      .lead {
+        font-size: 1.1rem;
+      }
+      
+      .contact-card {
+        margin-bottom: 1.5rem;
+      }
+      
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
+      
+      .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .display-4 {
+        font-size: 2rem !important;
+      }
+      
+      .lead {
+        font-size: 1rem;
+      }
+      
+      .contact-icon {
+        width: 50px;
+        height: 50px;
+      }
+      
+      h3.h4 {
+        font-size: 1.2rem;
+      }
+      
+      .form-label {
+        font-size: 0.9rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -74,7 +131,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html" style="color: var(--primary);">DevExplorer</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -235,9 +292,8 @@
   <footer class="py-4 bg-darker text-center">
     <div class="container">
       <div class="social-links mb-3">
-        <a href="#" class="text-white mx-2"><i class="bi bi-github fs-4"></i></a>
-        <a href="#" class="text-white mx-2"><i class="bi bi-linkedin fs-4"></i></a>
-        <a href="#" class="text-white mx-2"><i class="bi bi-twitter fs-4"></i></a>
+        <a href="https://github.com/Balajipa03" class="text-white mx-2"><i class="bi bi-github fs-4"></i></a>
+        <a href="https://linkedin.com/in/balajiparla" class="text-white mx-2"><i class="bi bi-linkedin fs-4"></i></a>
       </div>
       <p class="mb-0">&copy; 2025 Balaji PA. All rights reserved.</p>
     </div>
