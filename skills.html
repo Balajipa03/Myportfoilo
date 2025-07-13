@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Skills | DevExplorer</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -32,8 +32,8 @@
 
         .radar-chart-container {
             position: relative;
-            height: 400px;
-            width: 100%;
+            max-height: 400px;
+            aspect-ratio: 1 / 1;
         }
 
         .navbar {
@@ -49,11 +49,27 @@
         body {
             background-color: var(--dark);
             color: var(--light);
-            overflow-x: hidden;
+        }
+
+        body.light-mode {
+            background-color: var(--light);
+            color: var(--dark);
         }
 
         .bg-darker {
             background-color: #121212;
+        }
+
+        .bg-darker.light-mode {
+            background-color: #e9ecef;
+        }
+
+        .bg-dark {
+            background-color: #1f1f2e !important;
+        }
+
+        .bg-dark.light-mode {
+            background-color: #e9ecef !important;
         }
 
         .text-accent {
@@ -62,10 +78,6 @@
 
         .border-accent {
             border-color: var(--accent) !important;
-        }
-
-        .bg-dark {
-            background-color: #1f1f2e !important;
         }
 
         .text-primary {
@@ -79,49 +91,6 @@
         .text-light {
             color: var(--light) !important;
         }
-
-        /* Mobile-specific adjustments */
-        @media (max-width: 768px) {
-            .skills-header {
-                padding-top: 2rem !important;
-                padding-bottom: 2rem !important;
-            }
-            
-            .display-4 {
-                font-size: 2.5rem !important;
-            }
-            
-            .radar-chart-container {
-                height: 300px;
-                margin-bottom: 1.5rem;
-            }
-            
-            .card {
-                margin-bottom: 1rem;
-            }
-            
-            .skill-item {
-                margin-bottom: 1.5rem !important;
-            }
-            
-            .navbar-brand {
-                font-size: 1.2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .radar-chart-container {
-                height: 250px;
-            }
-            
-            .display-4 {
-                font-size: 2rem !important;
-            }
-            
-            .lead {
-                font-size: 1rem;
-            }
-        }
     </style>
 </head>
 <body>
@@ -129,7 +98,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html" style="color: var(--primary);">DevExplorer</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -348,10 +317,10 @@
         <div class="container">
             <div class="social-links mb-3">
                 <a href="https://github.com/Balajipa03" class="text-white mx-2"><i class="bi bi-github fs-4"></i></a>
-                <a href="linkedin.com/in/balajiparla" class="text-white mx-2"><i class="bi bi-linkedin fs-4"></i></a>
+                <a href="https://linkedin.com/in/balajiparla" class="text-white mx-2"><i class="bi bi-linkedin fs-4"></i></a>
                 <!-- <a href="#" class="text-white mx-2"><i class="bi bi-twitter fs-4"></i></a> -->
             </div>
-            <p class="mb-0">&copy; 2025 Balaji PA. All rights reserved.</p>
+            <p class="mb-0">© 2025 Balaji PA. All rights reserved.</comp>
         </div>
     </footer>
 
@@ -377,8 +346,7 @@
                     }]
                 },
                 options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
+                    maintainAspectRatio: true,
                     scales: {
                         r: {
                             angleLines: {
@@ -392,14 +360,13 @@
                             pointLabels: {
                                 color: '#fff',
                                 font: {
-                                    size: window.innerWidth < 768 ? 10 : 12
+                                    size: 12
                                 }
                             },
                             ticks: {
                                 backdropColor: 'transparent',
                                 color: '#fff',
-                                stepSize: 20,
-                                display: window.innerWidth > 576
+                                stepSize: 20
                             }
                         }
                     },
@@ -415,13 +382,26 @@
                     }
                 }
             });
-            
-            // Handle window resize for chart
-            window.addEventListener('resize', function() {
-                if (window.skillsChart) {
-                    window.skillsChart.resize();
-                }
+
+            // Dark Mode Toggle
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+            const icon = darkModeToggle.querySelector('i');
+
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('light-mode');
+                const isLightMode = body.classList.contains('light-mode');
+                icon.classList.toggle('bi-moon-fill', !isLightMode);
+                icon.classList.toggle('bi-sun-fill', isLightMode);
+                localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
             });
+
+            // Load theme from localStorage
+            if (localStorage.getItem('theme') === 'light') {
+                body.classList.add('light-mode');
+                icon.classList.remove('bi-moon-fill');
+                icon.classList.add('bi-sun-fill');
+            }
         });
     </script>
 </body>
