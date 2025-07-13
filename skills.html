@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>My Skills | DevExplorer</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -33,6 +33,7 @@
         .radar-chart-container {
             position: relative;
             height: 400px;
+            width: 100%;
         }
 
         .navbar {
@@ -48,6 +49,7 @@
         body {
             background-color: var(--dark);
             color: var(--light);
+            overflow-x: hidden;
         }
 
         .bg-darker {
@@ -77,6 +79,49 @@
         .text-light {
             color: var(--light) !important;
         }
+
+        /* Mobile-specific adjustments */
+        @media (max-width: 768px) {
+            .skills-header {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+            }
+            
+            .display-4 {
+                font-size: 2.5rem !important;
+            }
+            
+            .radar-chart-container {
+                height: 300px;
+                margin-bottom: 1.5rem;
+            }
+            
+            .card {
+                margin-bottom: 1rem;
+            }
+            
+            .skill-item {
+                margin-bottom: 1.5rem !important;
+            }
+            
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .radar-chart-container {
+                height: 250px;
+            }
+            
+            .display-4 {
+                font-size: 2rem !important;
+            }
+            
+            .lead {
+                font-size: 1rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -84,7 +129,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand fw-bold" href="index.html" style="color: var(--primary);">DevExplorer</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -332,6 +377,8 @@
                     }]
                 },
                 options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
                     scales: {
                         r: {
                             angleLines: {
@@ -345,13 +392,14 @@
                             pointLabels: {
                                 color: '#fff',
                                 font: {
-                                    size: 12
+                                    size: window.innerWidth < 768 ? 10 : 12
                                 }
                             },
                             ticks: {
                                 backdropColor: 'transparent',
                                 color: '#fff',
-                                stepSize: 20
+                                stepSize: 20,
+                                display: window.innerWidth > 576
                             }
                         }
                     },
@@ -365,6 +413,13 @@
                             tension: 0.1
                         }
                     }
+                }
+            });
+            
+            // Handle window resize for chart
+            window.addEventListener('resize', function() {
+                if (window.skillsChart) {
+                    window.skillsChart.resize();
                 }
             });
         });
