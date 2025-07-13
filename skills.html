@@ -16,7 +16,7 @@
         :root {
             --primary: #6e44ff;
             --secondary: #b892ff;
-            --accent: #ff7d00;
+            -- Caspent: #ff7d00;
             --dark: #1a1a2e;
             --light: #f8f9fa;
         }
@@ -90,6 +90,34 @@
 
         .text-light {
             color: var(--light) !important;
+        }
+
+        /* Mobile-specific styles */
+        @media (max-width: 576px) {
+            .skill-item .d-flex {
+                font-size: 0.9rem; /* Slightly larger text for readability */
+            }
+            .progress {
+                height: 12px; /* Thicker progress bars on mobile */
+            }
+            .card-body {
+                padding: 1rem; /* Reduced padding on mobile */
+            }
+            .skill-category .card-body {
+                padding: 1rem; /* Reduced padding for category cards */
+            }
+            .skill-category h4 {
+                font-size: 1.25rem; /* Slightly smaller headings */
+            }
+            .skill-category .fs-1 {
+                font-size: 2rem !important; /* Smaller icons on mobile */
+            }
+            .skill-category ul {
+                font-size: 0.9rem; /* Smaller list text */
+            }
+            .row.g-4 {
+                --bs-gutter-x: 1rem; /* Reduced gutter for skill categories */
+            }
         }
     </style>
 </head>
@@ -320,7 +348,7 @@
                 <a href="https://linkedin.com/in/balajiparla" class="text-white mx-2"><i class="bi bi-linkedin fs-4"></i></a>
                 <!-- <a href="#" class="text-white mx-2"><i class="bi bi-twitter fs-4"></i></a> -->
             </div>
-            <p class="mb-0">© 2025 Balaji PA. All rights reserved.</comp>
+            <p class="mb-0">© 2025 Balaji PA. All rights reserved.</p>
         </div>
     </footer>
 
